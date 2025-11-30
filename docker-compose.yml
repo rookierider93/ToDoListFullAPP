@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: ToDoList.API/Dockerfile
+    ports:
+      - "5295:80"
+    environment:
+      # Override connection string to point to volume-backed location
+      - ConnectionStrings__tododb=Data Source=/data/todoDB.db
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+    volumes:
+      - dbdata:/data
+
+  web:
+    build:
+      context: .
+      dockerfile: TodoList.WebClient/Dockerfile
+    ports:
+      - "5173:80"
+    depends_on:
+      - api
+
+volumes:
+  dbdata:
+    driver: local

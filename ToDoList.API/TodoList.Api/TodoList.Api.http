@@ -1,0 +1,36 @@
+@TodoList.Api_HostAddress = http://localhost:5295
+
+GET {{TodoList.Api_HostAddress}}/
+Accept: application/json
+
+###
+
+GET {{TodoList.Api_HostAddress}}/todos
+Accept: application/json
+###
+GET {{TodoList.Api_HostAddress}}/todos/1
+Accept: application/json
+###
+
+POST {{TodoList.Api_HostAddress}}/todos
+Content-Type: application/json
+
+{
+    "title": "New Task",
+    "isCompleted": false
+}
+###
+
+PUT {{TodoList.Api_HostAddress}}/todos/1
+Content-Type: application/json
+{
+    "id": 1,
+    "title": "Updated Task",
+    "isCompleted": true
+}
+###
+
+DELETE {{TodoList.Api_HostAddress}}/todos/1
+Accept: application/json
+###
+
