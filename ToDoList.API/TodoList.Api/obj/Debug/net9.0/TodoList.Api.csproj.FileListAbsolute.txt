@@ -131,3 +131,4 @@ C:\ROHAN\Study\ToDoList\ToDoList.API\TodoList.Api\bin\Debug\net9.0\ru\Microsoft.
 C:\ROHAN\Study\ToDoList\ToDoList.API\TodoList.Api\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\ROHAN\Study\ToDoList\ToDoList.API\TodoList.Api\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\ROHAN\Study\ToDoList\ToDoList.API\TodoList.Api\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\ROHAN\Study\ToDoList\ToDoList.API\TodoList.Api\obj\Debug\net9.0\TodoList.Api.sourcelink.json

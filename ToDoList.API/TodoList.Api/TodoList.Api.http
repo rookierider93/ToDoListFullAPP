@@ -5,7 +5,7 @@ Accept: application/json
 
 ###
 
-GET {{TodoList.Api_HostAddress}}/todos
+GET {{TodoList.Api_HostAddress}}/to
 Accept: application/json
 ###
 GET {{TodoList.Api_HostAddress}}/todos/1

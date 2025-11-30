@@ -14,10 +14,11 @@ public static class TodoEndpoints
         var group = app.MapGroup("todos").WithParameterValidation();
 
         //GET /todos
-        group.MapGet("/", async (ToDoListContext dbContext) =>{
-           var todos= await dbContext.ToDos.ToListAsync();
-           return todos is not null? Results.ok(todos): Results.NotFound();
-        } );
+        group.MapGet("/", async (ToDoListContext dbContext) =>
+        {
+            var todos = await dbContext.ToDos.ToListAsync();
+            return todos is not null ? Results.Ok(todos) : Results.NotFound();
+        });
 
         //GET /todos/{id}
         group.MapGet("/{id}", async (int id, ToDoListContext dbContext) =>

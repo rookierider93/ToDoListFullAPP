@@ -13,7 +13,8 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://+:80
     volumes:
-      - dbdata:/data
+      # Bind-mount a local folder so the SQLite file is directly accessible from the host
+      - ./dbdata:/data
 
   web:
     build:
@@ -24,6 +25,4 @@ services:
     depends_on:
       - api
 
-volumes:
-  dbdata:
-    driver: local
+# Note: Using a host bind-mount for ./dbdata so DB files appear under the repo on the host.

@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Http.HttpResults;
 using TodoList.Api.Data;
+using Microsoft.EntityFrameworkCore;
 using TodoList.Api.Endpoints;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -41,6 +42,13 @@ app.UseCors("AllowAll");
 app.MapStatusEndpoints();
 app.MapUserEndpoints();
 app.mapTodoEndpoints();
+
+// Apply pending EF Core migrations on startup so SQLite DB is created in the mounted volume
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<ToDoListContext>();
+    db.Database.Migrate();
+}
 
 app.Run();
 
